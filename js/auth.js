@@ -25,7 +25,7 @@ function register(){
  if(S.students.some(s=>s.email?.trim().toLowerCase()==e))return err("This email is already registered. Log in with it or contact the Registrar.");
  if(S.students.some(s=>s.first.toLowerCase()==f.toLowerCase()&&s.last.toLowerCase()==l.toLowerCase()&&s.birth==b))return err("You are already registered. Please log in using your registered email.");
  const id=Date.now(),no=nextNo(),pw="smu"+Math.floor(1000+Math.random()*9000);
- S.students.push({id,no,first:f,middle:g("rm"),last:l,birth:b,gender:$("rg").value,email:e,contact:g("rc"),pid:+$("rp").value,year:+$("ry").value,on:1});
+ S.students.push({id,no,first:f,middle:g("rm"),last:l,birth:b,gender:$("rg").value,Status:g("rcs"),email:e,contact:g("rc"),pid:+$("rp").value,year:+$("ry").value,on:1});
  S.users.push({u:e,p:pw,role:"Student",sid:id,name:f+" "+l});
  issued={no,pw,email:e,name:f+" "+l};save();page="done";render()}
 function goLogin(){page="login";render();$("lu").value=issued.email;$("lp").focus()}

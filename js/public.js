@@ -19,7 +19,8 @@ const REGISTER=()=>`<div class="lg"><a class="back" href="#" onclick="return pg(
 <form onsubmit="register();return false"><div class="rgrid">
 <div><label for="rf">FIRST NAME *</label><input id="rf"></div><div><label for="rm">MIDDLE NAME</label><input id="rm"></div>
 <div><label for="rl">LAST NAME *</label><input id="rl"></div><div><label for="rb">BIRTH DATE *</label><input id="rb" type="date"></div>
-<div><label for="rg">GENDER</label><select id="rg"><option>Male</option><option>Female</option></select></div><div><label for="rc">CONTACT NO.</label><input id="rc" placeholder="09XXXXXXXXX"></div>
+<div><label for="rg">GENDER</label><select id="rg"><option>Male</option><option>Female</option></select></div><div><label for="rcs">STATUS</label><select id="rcs"><option>Single</option><option>Married</option><option>Widowed</option><option>Single Parent</option></select></div>
+<div class="full"><label for="rc">CONTACT NO.</label><input id="rc" placeholder="09XXXXXXXXX"></div>
 <div class="full"><label for="re">EMAIL *</label><input id="re" type="email" placeholder="student@example.edu"></div>
 <div><label for="rp">PROGRAM</label><select id="rp">${opts(S.programs.filter(p=>p.on),p=>p.name,1)}</select></div><div><label for="ry">YEAR LEVEL</label><select id="ry"><option>1</option><option>2</option><option>3</option><option>4</option></select></div></div>
 <div id="le" class="lerr" role="alert"></div><button class="btn gold" type="submit">Register</button></form>
