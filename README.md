@@ -6,6 +6,8 @@ New students: click Enroll Now, register with a unique email address, and sign i
 
 On a fresh browser, choose the administrator setup link on the login page to create the first staff account. Admin-created student accounts require a password to be set at creation.
 
+For a quick local walkthrough, select **Log in to demo account** on the login page. The demo credentials are `demo@smu.edu.ph` / `Demo123!`. This is a public demo administrator account, not suitable for a deployed or production system.
+
 ## Security limitation
 
 This is a front-end demonstration: account records and passwords are stored in browser local storage, not in a secure server-side authentication system. Do not use it for real student records or passwords. Publishing this repository shares the source code only; it does not include browser local-storage data.

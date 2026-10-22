@@ -5,7 +5,7 @@ function login(){const n=$("lu").value.trim().toLowerCase(),pw=$("lp").value,mat
  S.user=u;if(u.role=="Student")S.sel=u.sid;view="Dashboard";render()}
 function setupAdmin(){
  const name=$("an").value.trim(),username=$("au").value.trim().toLowerCase(),password=$("ap").value,confirm=$("ac").value,err=m=>{$("ae").textContent=m};
- if(S.users.some(u=>u.role=="Administrator"))return err("An administrator account already exists. Please log in.");
+ if(S.users.some(u=>u.role=="Administrator"&&!u.demo))return err("An administrator account already exists. Please log in.");
  if(!name||!username||!password||!confirm)return err("Complete all fields.");
  if(!/^\S+@\S+\.\S+$/.test(username))return err("Enter a valid email address for the administrator username.");
  if(S.users.some(u=>String(u.u).trim().toLowerCase()==username))return err("That username is already in use.");
@@ -15,6 +15,7 @@ function setupAdmin(){
  $("lu").value=username;$("le").textContent="Administrator account created. Sign in with your new credentials.";
 }
 function logout(){S.user=null;page="home";render()}
+function useDemoLogin(){$("lu").value="demo@smu.edu.ph";$("lp").value="Demo123!";login()}
 
 function nextNo(){let n=S.students.length+1,no;do{no="2026-"+String(n++).padStart(4,"0")}while(S.students.some(s=>s.no==no));return no}
 function register(){

@@ -160,8 +160,9 @@ const seed=()=>({
  programs:[{id:1,code:"BSIT",name:"BS Information Technology",dept:"Engineering, Architecture & IT",on:1},{id:2,code:"BSBA",name:"BS Business Administration",dept:"Accountancy & Business",on:1},{id:3,code:"BSED",name:"BS Secondary Education",dept:"Teacher Education & Humanities",on:1}],
  courses:parse(BSIT,1).concat(parse(BSBA,2),parse(BSED,3)),
  students:[],
- enrollments:[],payments:[],cart:[],sel:0,term:"1",cf:1,cfy:0,user:null,users:[]});
+ enrollments:[],payments:[],cart:[],sel:0,term:"1",cf:1,cfy:0,editCourseId:0,user:null,users:[]});
 let S;try{S=JSON.parse(localStorage.getItem("smu_oes2"))}catch(e){}S=S||seed();
+if(!S.users.some(u=>u.demo))S.users.push({u:"demo@smu.edu.ph",p:"Demo123!",role:"Administrator",name:"Demo Administrator",demo:true});
 // Remove the old sample student from browsers that already saved the previous seed data.
 const demo=S.students.find(s=>s.id==1&&s.no=="2026-0001"&&!s.birth);
 if(demo){
